@@ -13,7 +13,7 @@ const poppins = Poppins({
 
 
 export const metadata: Metadata = {
-  title: "TrFliX",
+  title: "TrfliX",
   description: "TRX Films",
 };
 
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} antialiased bg-emerald-950 text-white`}
+        className={`${poppins.variable} antialiased bg-purple-950 text-white`}
       >
         <Header />
         {children}

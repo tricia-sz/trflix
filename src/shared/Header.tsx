@@ -5,18 +5,21 @@ import { LuPopcorn } from "react-icons/lu"
 import { RiMovieAiLine } from "react-icons/ri"
 import Container from "./Container"
 import Image from "next/image"
-import logo from "../../public/logo2.svg"
+import logo from "../../public/logo4.svg"
 import { Input } from "@/components/ui/input"
 import { IoIosSearch } from "react-icons/io"
 
+import waveTop from "../../public/wave.svg"
+
 export default function Header() {
     return (
-        <header className="bg-zinc-950 justify-center items-center py-8">
+      <>
+          <header className="bg-slate-950 justify-center items-center py-8">
             <Container className="flex  justify-between items-center gap-8 cursor-pointer" >
                 <Link href="/" className="">
                     <Image alt="teste" src={logo}  />
                 </Link>
-                <div className="w-2xl mx-auto bg-emerald-950 border-none rounded-4xl  py-1 px-4 cursor-pointer">
+                <div className="w-2xl mx-auto bg-purple-950 border-none rounded-4xl  py-1 px-4 cursor-pointer">
                     <div className="flex">
                         <Input className="border-none rounded-4x placeholder:text-slate-400 " placeholder="" />
                         <button className="">
@@ -29,17 +32,17 @@ export default function Header() {
 
                     <Link href="/" className="flex gap-2">
                         <div className="flex gap-2">
-                            <LuPopcorn size={24} className="text-green-500" />
+                            <LuPopcorn size={24} className="text-purple-500" />
                             FILMES
                         </div>
                     </Link>
                     <Link href="" className="flex gap-2">
-                        <BiCameraMovie size={24} className="text-green-500"/>
+                        <BiCameraMovie size={24} className="text-purple-500"/>
                         SÉRIES
                     </Link>
 
                     <Link href="" className="flex gap-2">
-                        <RiMovieAiLine size={24} className="text-green-500" />
+                        <RiMovieAiLine size={24} className="text-purple-500" />
                         ANIMES
 
                     </Link>
@@ -52,5 +55,7 @@ export default function Header() {
             </Container>
 
         </header>
+         <Image src={waveTop} className="w-full" alt="waveTop" />
+      </>
     )
 }

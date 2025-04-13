@@ -6,6 +6,11 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import { FaStar } from "react-icons/fa"
 import { FaStarHalfStroke } from "react-icons/fa6"
+import { GiPopcorn } from "react-icons/gi"
+import { PiPopcornFill } from "react-icons/pi"
+import { LuPopcorn } from "react-icons/lu"
+import { MdMovie } from "react-icons/md"
+import { BiMoviePlay } from "react-icons/bi"
 
 export default function Filme() {
     const {id} = useParams()
@@ -42,8 +47,8 @@ export default function Filme() {
     }
 
     return (
-        <div className="w-5xl mx-auto">
-            <h1 className="text-5xl mb-4  font-bold">{filme.title}</h1>
+        <div className="w-5xl mx-auto cursor-pointer">
+             <h1 className="text-5xl mb-4  font-bold flex gap-2"> {filme.title}</h1>
             <Image 
               alt=""
                 className="object-cover rounded-xl w-full"
@@ -53,13 +58,13 @@ export default function Filme() {
                 priority
                 src={`https://image.tmdb.org/t/p/original/${filme.backdrop_path}`}
             />
-        <h2 className="flex gap-2 text-2xl text-yellow-300 mt-8">Sinopse</h2>
+        <h2 className="flex gap-2 text-2xl font-medium mt-8"><BiMoviePlay size={36} className="" />Sinopse</h2>
         <span className="flex gap-2 text-2xl mb-8 mt-8">{filme.overview}</span>
-        <strong className="flex gap-2 text-3xl">Avalição: 
+        <strong className="flex gap-2 text-3xl">
+                <LuPopcorn  size={32}/>
                 <FaStar size={24} className="text-yellow-400"/>
                 <FaStar size={24} className="text-yellow-400"/> 
                 <FaStar size={24} className="text-yellow-400"/> 
-                <FaStar size={24} className="text-yellow-400"/>
                 <FaStar size={24} className="text-yellow-400"/>
                 <FaStarHalfStroke size={24} className="text-yellow-400" />
                 {filme.vote_average}

@@ -11,6 +11,7 @@ import { PiPopcornFill } from "react-icons/pi"
 import { LuPopcorn } from "react-icons/lu"
 import { MdMovie } from "react-icons/md"
 import { BiMoviePlay } from "react-icons/bi"
+import Link from "next/link"
 
 export default function Filme() {
     const {id} = useParams()
@@ -58,6 +59,7 @@ export default function Filme() {
                 priority
                 src={`https://image.tmdb.org/t/p/original/${filme.backdrop_path}`}
             />
+        {/* <span className="flex gap-2 text-3xl  text-red-500">{filme.genres.name}</span> */}
         <h2 className="flex gap-2 text-2xl font-medium mt-8"><BiMoviePlay size={36} className="" />Sinopse</h2>
         <span className="flex gap-2 text-2xl mb-8 mt-8">{filme.overview}</span>
         <strong className="flex gap-2 text-3xl">
@@ -69,6 +71,10 @@ export default function Filme() {
                 <FaStarHalfStroke size={24} className="text-yellow-400" />
                 {filme.vote_average}
         </strong>
+
+        <Link href={`https://youtube.com/results?search_query=${filme.title} Trailer`} target="blank" rel="external" >
+           <button className="bg-white  rounded-4xl py-4 px-8 text-purple-950 mt-8 text-xl">Assistir Trailer</button>
+        </Link>
         </div>
     )
 }

@@ -2,18 +2,12 @@
 import Container from "@/shared/Container"
 import Image from "next/image"
 import Link from "next/link"
-import { JSX, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import api from "../services/api"
-
-interface FilmesProps {
-  map(arg0: (filme: any) => JSX.Element): import("react").ReactNode
-  title: string
-  poster_path: string
-  id: string
-}
+import { FilmesProps } from "@/types/filmes"
 
 export default function Filmes() {
-  const [filmes, setFilmes] = useState<FilmesProps>([])
+  const [filmes, setFilmes] = useState<FilmesProps[]>([])
 
   useEffect(() => {
     async function loadFilmes() {

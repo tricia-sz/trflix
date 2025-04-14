@@ -21,9 +21,9 @@
 
 TrfliX - Projeto teste consumindo API do TMDB para busca de filmes e séries
 
-<!-- ### SITE EM PRODUÇÃO:
+ ### SITE EM PRODUÇÃO:
 
-[https://mountain-hero.netlify.app](https://mountain-hero.netlify.app) -->
+🌏 [https://trflix.netlify.app/](https://trflix.netlify.app/) 
 
 ## 🖥️ Como rodar este projeto 🖥️
 

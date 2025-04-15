@@ -17,13 +17,15 @@ export default function Footer() {
                     <Image alt="teste" src={logo}  />
                 </Link>
                 
-                <span className="text-sm text-slate-500 bg-Inc-950  font-mono  w-full flex items-center justify-center tracking-wide hover:text-slate-500 cursor-pointer">
+                <Link href={`https://tricia-sz.netlify.app/`} target="blank" rel="external" className="">
+                  <span className="text-sm text-slate-500 bg-Inc-950  font-mono  w-full flex items-center justify-center tracking-wide hover:text-purple-500 cursor-pointer ">
                     Developed by Parícia Souza{" "}
                     <span className="text-purple-600 px-2">
                         <FaHeart size={18} color="" />
                     </span>{" "}
                     2025
                 </span>
+                </Link>
             </Container>
 
         </footer>

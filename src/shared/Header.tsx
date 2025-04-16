@@ -10,6 +10,8 @@ import { Input } from "@/components/ui/input"
 import { IoIosSearch } from "react-icons/io"
 
 import waveTop from "../../public/wave.svg"
+import { MdFavorite } from "react-icons/md"
+import { FaStar } from "react-icons/fa"
 
 export default function Header() {
     return (
@@ -42,8 +44,8 @@ export default function Header() {
                     </Link>
 
                     <Link href="" className="flex gap-2">
-                        <RiMovieAiLine size={24} className="text-purple-500" />
-                        ANIMES
+                        <FaStar size={24} className="text-purple-500" />
+                        FAVORITOS
 
                     </Link>
                 </nav>

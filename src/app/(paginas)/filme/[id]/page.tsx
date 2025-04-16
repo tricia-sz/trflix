@@ -39,6 +39,23 @@ export default function Filme() {
             console.log('COMPONENTE DESMONTADO');
         }
     },[id, filme, loading])
+    
+
+    function salvarFilme() {
+      const minhaLista = localStorage.getItem("@trflix")
+      let filmesSalvos = JSON.parse(minhaLista) || []
+
+      const hasFilme = filmesSalvos.some((filmesSalvo) => filmesSalvo.id === filme?.id)
+
+      if(hasFilme){
+        alert("ESSE FILME JÁ ESTÁ NA SUA LISTA")
+        return;
+      }
+
+      filmesSalvos.push(filme)
+      localStorage.setItem("@trflix", JSON.stringify(filmesSalvos))
+      alert("FILME SALVO COM SUCESSO")
+    }
 
     if(loading) {
         return(
@@ -72,10 +89,14 @@ export default function Filme() {
                 <FaStarHalfStroke size={24} className="text-yellow-400" />
                 {filme?.vote_average}
         </strong>
-
-        <Link href={`https://youtube.com/results?search_query=${filme?.title} Trailer`} target="blank" rel="external" >
-           <button className="bg-white  rounded-4xl py-4 px-8 text-purple-950 mt-8 text-xl">Assistir Trailer</button>
-        </Link>
+        <div className="flex gap-4">
+          <Link href={""} target="blank" rel="external" >
+            <button onClick={salvarFilme} className="bg-white   rounded-4xl py-3 px-8 text-purple-950 mt-8 text-xl">Salvar</button>
+          </Link>
+          <Link href={`https://youtube.com/results?search_query=${filme?.title} Trailer`} target="blank" rel="external" >
+            <button className="bg-white  rounded-4xl py-3 px-8 text-purple-950 mt-8 text-xl">Assistir Trailer</button>
+          </Link>
+        </div>
         </div>
     )
 }

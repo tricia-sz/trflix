@@ -21,7 +21,7 @@ export default function Filme() {
   const { id } = useParams()
   const [filme, setFilme] = useState<FilmesProps>()
   const [loading, setLoading] = useState(true)
-  const [generos, setGeneros] = useState<FilmesProps[]>([])
+  // const [generos, setGeneros] = useState<ListaFilmesProps[]>([])
 
 
   useEffect(() => {
@@ -106,12 +106,30 @@ export default function Filme() {
         <div className="">
           <h2 className=" text-2xl mb-8  font-bold flex gap-2 text-purple-950">
             Genero:
+            {/* <div className="bg-red-200">
+              <ul>
+                {generos.map((item) => {
+                  return(
+                    <li key={item.genres.id}>
+                      <span>{item.genres.name}</span>
+                    </li>
+                  )
+
+                })}
+              </ul>
+
+            </div> */}
+
+            <div className="flex gap-2">
+              <span className="bg-purple-400 px-4 rounded-4xl text-purple-950 font-normal">{filme?.genres[0]?.name}</span> 
+              <span className="bg-purple-400 px-4 rounded-4xl text-purple-950 font-normal">{filme?.genres[1]?.name}</span> 
+              <span className="bg-purple-400 px-4 rounded-4xl text-purple-950 font-normal">{filme?.genres[2]?.name}</span> 
+              <span className="bg-purple-400 px-4 rounded-4xl text-purple-950 font-normal">{filme?.genres[3]?.name}</span> 
+              <span className="bg-purple-400 px-4 rounded-4xl text-purple-950 font-normal">{filme?.genres[4]?.name}</span> 
+            </div>
           
-           <span className="bg-purple-400 px-4 rounded-4xl text-purple-950 font-normal">{filme?.genres[0]?.name}</span> 
-            <span className="bg-purple-400 px-4 rounded-4xl text-purple-950 font-normal">{filme?.genres[1]?.name}</span> 
-            <span className="bg-purple-400 px-4 rounded-4xl text-purple-950 font-normal">{filme?.genres[2]?.name}</span> 
-            <span className="bg-purple-400 px-4 rounded-4xl text-purple-950 font-normal">{filme?.genres[3]?.name}</span> 
-            <span className="bg-purple-400 px-4 rounded-4xl text-purple-950 font-normal">{filme?.genres[4]?.name}</span> 
+         
+         
           </h2>
          
         </div>

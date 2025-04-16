@@ -1,17 +1,17 @@
 "use client"
+import { Input } from "@/components/ui/input"
+import Image from "next/image"
 import Link from "next/link"
 import { BiCameraMovie } from "react-icons/bi"
-import { LuPopcorn } from "react-icons/lu"
-import { RiMovieAiLine } from "react-icons/ri"
-import Container from "./Container"
-import Image from "next/image"
-import logo from "../../public/logo4.svg"
-import { Input } from "@/components/ui/input"
 import { IoIosSearch } from "react-icons/io"
+import { LuPopcorn } from "react-icons/lu"
+import logo from "../../public/logo4.svg"
+import Container from "./Container"
 
+import { FaStar, FaUserCircle } from "react-icons/fa"
 import waveTop from "../../public/wave.svg"
-import { MdFavorite } from "react-icons/md"
-import { FaStar } from "react-icons/fa"
+import { RiMovieAiLine } from "react-icons/ri"
+import { User } from "lucide-react"
 
 export default function Header() {
     return (
@@ -43,18 +43,18 @@ export default function Header() {
                         SÉRIES
                     </Link>
 
-                    <Link href="" className="flex gap-2">
+                    <Link href="/favoritos/" className="flex gap-2">
                         <FaStar size={24} className="text-purple-500" />
                         FAVORITOS
 
                     </Link>
-                </nav>
-                <Link href="" className="flex gap-2">
-                        {/* <RiMovieAiLine size={24} /> */}
-                        {/* <User size={26} className="text-sky-500"/> */}
+                    <Link href="" className="flex gap-2">
+                  <FaUserCircle size={36} className="text-purple-800"/>
 
-                    </Link>
+                </Link>
+                </nav>
             </Container>
+            
 
         </header>
          <Image src={waveTop} className="w-full" alt="waveTop" />

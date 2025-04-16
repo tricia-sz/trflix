@@ -1,6 +1,7 @@
 import { ReactNode } from "react"
 
 export interface FilmesProps {
+  name: ReactNode
   title: string
   poster_path: string
   id: string,

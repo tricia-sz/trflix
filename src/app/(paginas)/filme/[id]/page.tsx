@@ -12,12 +12,12 @@ import api from "../../../../services/api"
 import { FilmesProps } from "@/types/filmes"
 import { FcStart } from "react-icons/fc"
 import { IoIosSave } from "react-icons/io"
+import { toast, ToastContainer } from 'react-toastify';
 
 interface ListaFilmesProps {
   minhaLista: string | null
 }
 export default function Filme() {
-
   const { id } = useParams()
   const [filme, setFilme] = useState<FilmesProps>()
   const [loading, setLoading] = useState(true)
@@ -36,7 +36,9 @@ export default function Filme() {
         setFilme(resoinse.data)
         setLoading(false)
       }).catch(() => {
-        console.log('FILME NAO ENCONTRADO');
+
+      toast.error("Filme não encontrado =/")
+
       })
     }
 
@@ -52,13 +54,13 @@ export default function Filme() {
     const hasFilme = filmesSalvos.some((filmesSalvo: { id: string | undefined }) => filmesSalvo.id === filme?.id)
 
     if (hasFilme) {
-      alert("ESSE FILME JÁ ESTÁ NA SUA LISTA")
+      toast.warn("Esse filme já está na sua lista")
       return;
     }
 
     filmesSalvos.push(filme)
     localStorage.setItem("@trflix", JSON.stringify(filmesSalvos))
-    alert("FILME SALVO COM SUCESSO")
+    toast.success("Filme salvo com sucesso =)")
   }
 
   if (loading) {
@@ -148,7 +150,14 @@ export default function Filme() {
      
       <div className="flex gap-6  mt-4 mx-auto justify-center items-center">
         <Link href={""} >
-          <button onClick={salvarFilme} className="bg-purple-200  flex gap-2 justify-center items-center rounded-4xl py-3 px-8 text-purple-950 mt-8 text-xl"><IoIosSave size={24} />Salvar</button>
+          <button 
+            onClick={salvarFilme} 
+            className="bg-purple-200  flex gap-2 justify-center items-center rounded-4xl py-3 px-8 text-purple-950 mt-8 text-xl">
+            <IoIosSave size={24} />
+            Salvar
+            <ToastContainer  theme="colored" autoClose={5000} position="top-right"/>
+          </button>
+          
         </Link>
         <Link href={`https://youtube.com/results?search_query=${filme?.title} Trailer`} target="blank" rel="external" >
           <button className="bg-purple-200 flex gap-2 justify-center items-center rounded-4xl py-3 px-8 text-purple-950 mt-8 text-xl"><FcStart size={24} />Assistir Trailer</button>

@@ -12,11 +12,15 @@ export default function Favoritos() {
   const [filmes, setFilmes] = useState<FilmesProps[]>([])
 
   useEffect(() => {
-
-    const minhaLista = localStorage.getItem("@trflix");
-    setFilmes(JSON.parse(minhaLista) || [])
-  }, [])
-
+    try {
+      const minhaLista = localStorage.getItem("@trflix");
+      const filmesSalvos = minhaLista ? JSON.parse(minhaLista) : [];
+      setFilmes(filmesSalvos);
+    } catch (error) {
+      console.error("Erro ao ler favoritos do localStorage", error);
+      setFilmes([]);
+    }
+  }, []);
   function excluirFilme(id: string) {
     const filtroFilmes = filmes.filter((item) => {
       return (item.id !== id)

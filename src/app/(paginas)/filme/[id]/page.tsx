@@ -18,7 +18,6 @@ export default function Filme() {
   const { id } = useParams()
   const [filme, setFilme] = useState<FilmesProps>()
   const [loading, setLoading] = useState(true)
-  const [generos, setGeneros] = useState<FilmesProps[]>([])
 
 
   useEffect(() => {

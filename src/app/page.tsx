@@ -1,13 +1,13 @@
 "use client"
-import Filmes from "@/components/Filmes"
-import Container from "@/shared/Container"
-
+import Filmes from "@/components/Filmes";
+import Container from "@/shared/Container";
 export default function Home() {
   return (
 
-    <Container className="mt-24 mb-36">
+    <Container className="mb-12">
       <Filmes />
     </Container>
+    
 
   )
 }

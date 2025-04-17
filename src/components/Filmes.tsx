@@ -1,10 +1,10 @@
 "use client"
 import Container from "@/shared/Container"
+import { FilmesProps } from "@/types/filmes"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import api from "../services/api"
-import { FilmesProps } from "@/types/filmes"
 
 export default function Filmes() {
   const [filmes, setFilmes] = useState<FilmesProps[]>([])

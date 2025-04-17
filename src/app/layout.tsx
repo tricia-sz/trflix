@@ -13,7 +13,7 @@ const poppins = Poppins({
 
 
 export const metadata: Metadata = {
-  title: "TrfliX",
+  title: "GoatFlix",
   description: "TRX Films",
 };
 

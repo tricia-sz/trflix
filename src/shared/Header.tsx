@@ -1,14 +1,14 @@
 "use client"
+import { Input } from "@/components/ui/input"
+import Image from "next/image"
 import Link from "next/link"
 import { BiCameraMovie } from "react-icons/bi"
-import { LuPopcorn } from "react-icons/lu"
-import { RiMovieAiLine } from "react-icons/ri"
-import Container from "./Container"
-import Image from "next/image"
-import logo from "../../public/logo4.svg"
-import { Input } from "@/components/ui/input"
 import { IoIosSearch } from "react-icons/io"
+import { LuPopcorn } from "react-icons/lu"
+import logo from "../../public/logo.svg"
+import Container from "./Container"
 
+import { FaStar, FaUserCircle } from "react-icons/fa"
 import waveTop from "../../public/wave.svg"
 
 export default function Header() {
@@ -17,7 +17,7 @@ export default function Header() {
           <header className="bg-slate-950 justify-center items-center py-8">
             <Container className="flex  justify-between items-center gap-8 cursor-pointer" >
                 <Link href="/" className="">
-                    <Image alt="teste" src={logo}  />
+                    <Image alt="teste" src={logo} width={250} />
                 </Link>
                 <div className="w-2xl mx-auto bg-purple-950 border-none rounded-4xl  py-1 px-4 cursor-pointer">
                     <div className="flex">
@@ -41,18 +41,18 @@ export default function Header() {
                         SÉRIES
                     </Link>
 
+                    <Link href="/favoritos/" className="flex gap-2">
+                        <FaStar size={24} className="text-purple-500" />
+                        FAVORITOS
+
+                    </Link>
                     <Link href="" className="flex gap-2">
-                        <RiMovieAiLine size={24} className="text-purple-500" />
-                        ANIMES
+                  <FaUserCircle size={36} className="text-purple-800"/>
 
-                    </Link>
+                </Link>
                 </nav>
-                <Link href="" className="flex gap-2">
-                        {/* <RiMovieAiLine size={24} /> */}
-                        {/* <User size={26} className="text-sky-500"/> */}
-
-                    </Link>
             </Container>
+            
 
         </header>
          <Image src={waveTop} className="w-full" alt="waveTop" />

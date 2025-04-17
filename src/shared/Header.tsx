@@ -5,13 +5,11 @@ import Link from "next/link"
 import { BiCameraMovie } from "react-icons/bi"
 import { IoIosSearch } from "react-icons/io"
 import { LuPopcorn } from "react-icons/lu"
-import logo from "../../public/logo4.svg"
+import logo from "../../public/logo.svg"
 import Container from "./Container"
 
 import { FaStar, FaUserCircle } from "react-icons/fa"
 import waveTop from "../../public/wave.svg"
-import { RiMovieAiLine } from "react-icons/ri"
-import { User } from "lucide-react"
 
 export default function Header() {
     return (
@@ -19,7 +17,7 @@ export default function Header() {
           <header className="bg-slate-950 justify-center items-center py-8">
             <Container className="flex  justify-between items-center gap-8 cursor-pointer" >
                 <Link href="/" className="">
-                    <Image alt="teste" src={logo}  />
+                    <Image alt="teste" src={logo} width={250} />
                 </Link>
                 <div className="w-2xl mx-auto bg-purple-950 border-none rounded-4xl  py-1 px-4 cursor-pointer">
                     <div className="flex">

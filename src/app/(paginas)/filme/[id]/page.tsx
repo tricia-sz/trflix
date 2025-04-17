@@ -16,6 +16,7 @@ import { toast, ToastContainer } from 'react-toastify';
 
 interface ListaFilmesProps {
   minhaLista: string | null
+  name: string
 }
 export default function Filme() {
   const { id } = useParams()
@@ -108,26 +109,13 @@ export default function Filme() {
         <div className="">
           <h2 className=" text-2xl mb-8  font-bold flex gap-2 text-purple-950">
             Genero:
-            {/* <div className="bg-red-200">
-              <ul>
-                {generos.map((item) => {
-                  return(
-                    <li key={item.genres.id}>
-                      <span>{item.genres.name}</span>
-                    </li>
-                  )
-
-                })}
-              </ul>
-
-            </div> */}
-
             <div className="flex gap-2">
-              <span className="bg-purple-400 px-4 rounded-4xl text-purple-950 font-normal">{filme?.genres[0]?.name}</span> 
-              <span className="bg-purple-400 px-4 rounded-4xl text-purple-950 font-normal">{filme?.genres[1]?.name}</span> 
-              <span className="bg-purple-400 px-4 rounded-4xl text-purple-950 font-normal">{filme?.genres[2]?.name}</span> 
-              <span className="bg-purple-400 px-4 rounded-4xl text-purple-950 font-normal">{filme?.genres[3]?.name}</span> 
-              <span className="bg-purple-400 px-4 rounded-4xl text-purple-950 font-normal">{filme?.genres[4]?.name}</span> 
+              <span className="flex px-4 rounded-4xl text-purple-200 font-light gap-4">
+                {filme?.genres?.map((genero: any) => (
+                  <span className="px-4 gap-2 bg-purple-900 rounded-2xl">{genero.name}</span>
+                ))}
+                
+              </span> 
             </div>
           
          

@@ -5,13 +5,18 @@ import { FaHeart } from "react-icons/fa"
 import logo from "../../public/logo4.svg"
 import Container from "./Container"
 import waveBottom from "../../public/wave.svg"
+import { CabritaLogoFooter } from "../components/CabritaLogoFooter"
 
 export default function Footer() {
     return (
        <>
+            
             <Image src={waveBottom} className="w-full rotate-180" alt="waveTop"/>
-        
+            
          <footer className="bg-slate-950 justify-center items-center py-8 ">
+         <div className='flex justify-center '>
+               <CabritaLogoFooter />
+         </div>
             <Container className="flex  flex-col justify-center items-center" >
                 <Link href="/" className="">
                     <Image alt="teste" src={logo}  />

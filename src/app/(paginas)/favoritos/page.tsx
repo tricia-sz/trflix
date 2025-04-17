@@ -31,7 +31,16 @@ export default function Favoritos() {
       <div className="flex  justify-center items-center flex-col ">
       <h1 className="text-white text-5xl mb-8  font-bold flex gap-2"> Meus Favoritos</h1>
 
-      {filmes.length === 0 && <span className="text-yellow-300 text-3xl mb-8  font-bold ">Você ainda não possui nenhum filme salvo =(</span>}
+      {filmes.length === 0 && <span className="text-yellow-300 text-3xl mb-8  font-bold ">
+          Você ainda não possui nenhum filme salvo =( 
+            <Link href={`/`} className=" text-yellow-400 hover:text-yellow-600 flex mx-auto justify-center mt-8" >
+              <button className="bg-purple-400  flex gap-2 justify-center items-center rounded-4xl py-3 px-8 mb-8 text-purple-950 mt-8 text-xl hover:bg-purple-600">
+                      {/* <MdDelete className="" size={24} /> */}
+                      Escolher um filme
+               </button>
+            </Link>
+                   
+      </span>}
 
         <ul className="flex items-center justify-center mx-auto gap-8 flex-wrap">
           

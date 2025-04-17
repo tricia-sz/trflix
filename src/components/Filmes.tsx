@@ -1,14 +1,12 @@
 "use client"
 import Container from "@/shared/Container"
+import { FilmesProps } from "@/types/filmes"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import api from "../services/api"
-import { FilmesProps } from "@/types/filmes"
-import { ToastContainer, toast } from 'react-toastify';
 
 export default function Filmes() {
-  const notify = () => toast('Wow so easy !');
   const [filmes, setFilmes] = useState<FilmesProps[]>([])
 
   useEffect(() => {
@@ -57,10 +55,6 @@ export default function Filmes() {
               </div>
             )
           })}
-        </div>
-            <div className="grid place-items-center h-dvh bg-zinc-900/15">
-            <button onClick={notify}>Notify !</button>
-            <ToastContainer />
         </div>
       </div>
     </Container>

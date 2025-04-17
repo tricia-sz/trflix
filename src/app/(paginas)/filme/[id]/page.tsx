@@ -14,15 +14,11 @@ import { FcStart } from "react-icons/fc"
 import { IoIosSave } from "react-icons/io"
 import { toast, ToastContainer } from 'react-toastify';
 
-interface ListaFilmesProps {
-  minhaLista: string | null
-  name: string
-}
 export default function Filme() {
   const { id } = useParams()
   const [filme, setFilme] = useState<FilmesProps>()
   const [loading, setLoading] = useState(true)
-  // const [generos, setGeneros] = useState<ListaFilmesProps[]>([])
+  const [generos, setGeneros] = useState<FilmesProps[]>([])
 
 
   useEffect(() => {
@@ -51,7 +47,7 @@ export default function Filme() {
 
   function salvarFilme() {
     const minhaLista: string | null = localStorage.getItem("@trflix")
-    let filmesSalvos = JSON.parse(minhaLista as string) || []
+    const filmesSalvos = JSON.parse(minhaLista as string) || []
     const hasFilme = filmesSalvos.some((filmesSalvo: { id: string | undefined }) => filmesSalvo.id === filme?.id)
 
     if (hasFilme) {
@@ -89,7 +85,7 @@ export default function Filme() {
       <div className="bg-purple-500 rounded-2xl py-4 px-4 mb-4 mt-8 flex flex-col w-full  gap-8">
         <div className="bg-purple-950 rounded-2xl px-4">
           <h2 className="flex gap-2 text-2xl font-medium mt-8 text-purple-300"><BiMoviePlay size={36} className="" />Sinopse</h2>
-          <span className="flex gap-2 text-2xl mb-8 mt-4 text-gray-300">{filme?.overview}</span>
+          <span className="flex gap-2 text-2xl mb-8 mt-4 text-gray-300   -tracking-tighter ">{filme?.overview}</span>
         </div>
        <div className="rounded-3xl px-3 py-4">
         <h2 className=" text-2xl mb-8  font-bold flex gap-2 text-purple-950">
@@ -108,18 +104,16 @@ export default function Filme() {
           </h2>
         <div className="">
           <h2 className=" text-2xl mb-8  font-bold flex gap-2 text-purple-950">
-            Genero:
+            Gênero:
             <div className="flex gap-2">
               <span className="flex px-4 rounded-4xl text-purple-200 font-light gap-4">
-                {filme?.genres?.map((genero: any) => (
-                  <span className="px-4 gap-2 bg-purple-900 rounded-2xl">{genero.name}</span>
+                {filme?.genres?.map((genero) => (
+                  <span key={genero?.id} className="px-4 gap-2 bg-purple-900 rounded-2xl">{genero?.name}</span>
                 ))}
                 
               </span> 
             </div>
           
-         
-         
           </h2>
          
         </div>

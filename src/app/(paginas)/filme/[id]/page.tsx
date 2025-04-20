@@ -69,45 +69,45 @@ export default function Filme() {
 
 
   return (
-    <div className="w-full mx-auto justify-center cursor-pointer  lg:w-7xl md:w-3xl sm:w-xl">
-      <h1 className="text-white text-5xl mb-8  font-bold flex gap-2"> {filme?.title}</h1>
+    <div className="w-full mx-auto justify-center p-4 cursor-pointer  lg:w-7xl md:w-3xl sm:w-xl">
+      <h1 className="text-white text-3xl mb-8  font-bold flex gap-2 p-2 text-center lg:text-5xl"> {filme?.title}</h1>
 
       <Image
         alt=""
-        className="object-cover rounded-xl w-full"
+        className="object-cover  w-full p-4 rounded-4xl"
         width={300}
         height={100}
         unoptimized
         priority
         src={`https://image.tmdb.org/t/p/original/${filme?.backdrop_path}`}
       />
-      <div className=" bg-purple-500 rounded-2xl py-4 px-4 mb-4 mt-8 flex flex-col w-full  gap-8 lg:w-7xl md:w-3xl sm:w-xl">
+      <div className=" bg-purple-500 rounded-2xl py-4 px-2  mb-4 mt-8 flex flex-col w-full lg:w-7xl md:w-3xl sm:w-xl">
         <div className="bg-purple-950 rounded-2xl px-4">
           <h2 className="flex gap-2 text-2xl font-medium mt-8 text-purple-300"><BiMoviePlay size={36} className="" />Sinopse</h2>
           <span className="flex gap-2 text-2xl mb-8 mt-4 text-gray-300   -tracking-tighter ">{filme?.overview}</span>
         </div>
-       <div className="rounded-3xl px-3 py-4">
-        <h2 className=" text-2xl mb-8  font-bold flex gap-2 text-purple-950">
+       <div className="rounded-3xl px-2 py-4 md:full sm:w-xl lg:w-full">
+        <h2 className=" text-2xl mb-4  font-bold flex gap-2 text-purple-950">
             País de origem:
             <span className="font-normal">{filme?.origin_country}</span>
           </h2>
-          <h2 className=" text-2xl mb-8  font-bold flex gap-2 text-purple-950">
+          <h2 className=" text-2xl mb-4  font-bold flex gap-2 text-purple-950">
             Duração: 
             <span className="font-normal">{filme?.runtime}</span>
             <span className="font-normal">minutos</span>
           </h2>
           
-          <h2 className=" text-2xl mb-8  font-bold flex gap-2 text-purple-950"> 
-            Data de lançamento: 
-            <span className="font-normal">{filme?.release_date}</span>
+          <h2 className="text-2xl mb-4  font-bold flex gap-2 text-purple-950"> 
+            Lançamento: 
+            <span className="font-normal ">{filme?.release_date}</span>
           </h2>
-        <div className="">
-          <h2 className=" text-2xl mb-8  font-bold flex gap-2 text-purple-950">
+        <div className="flex">
+          <h2 className=" text-2xl mb-4  font-bold flex gap-2 text-purple-950">
             Gênero:
             <div className="flex gap-2">
-              <span className="flex px-4 rounded-4xl text-purple-200 font-light gap-4">
+              <span className="flex px-4 rounded-4xl text-purple-200 font-light gap-2">
                 {filme?.genres?.map((genero) => (
-                  <span key={genero?.id} className="px-4 gap-2 bg-purple-900 rounded-2xl">{genero?.name}</span>
+                  <span key={genero?.id} className="w-full flex px-2 gap-2 bg-purple-900 rounded-2xl text-sm justify-center items-center">{genero?.name}</span>
                 ))}
                 
               </span> 
@@ -141,7 +141,7 @@ export default function Filme() {
           
         </Link>
         <Link href={`https://youtube.com/results?search_query=${filme?.title} Trailer`} target="blank" rel="external" >
-          <button className="bg-purple-200 flex gap-2 justify-center items-center rounded-4xl py-3 px-8 text-purple-950 mt-8 text-xl"><FcStart size={24} />Assistir Trailer</button>
+          <button className="flex bg-purple-200  gap-2 justify-center items-center rounded-4xl px-4  text-purple-950 mt-8 text-xl"><FcStart size={24} />Assistir Trailer</button>
         </Link>
       </div>
     </div>

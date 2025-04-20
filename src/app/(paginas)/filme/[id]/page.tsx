@@ -69,7 +69,7 @@ export default function Filme() {
 
 
   return (
-    <div className="w-5xl mx-auto cursor-pointer">
+    <div className="w-full mx-auto justify-center cursor-pointer  lg:w-7xl md:w-3xl sm:w-xl">
       <h1 className="text-white text-5xl mb-8  font-bold flex gap-2"> {filme?.title}</h1>
 
       <Image
@@ -81,7 +81,7 @@ export default function Filme() {
         priority
         src={`https://image.tmdb.org/t/p/original/${filme?.backdrop_path}`}
       />
-      <div className="bg-purple-500 rounded-2xl py-4 px-4 mb-4 mt-8 flex flex-col w-full  gap-8">
+      <div className=" bg-purple-500 rounded-2xl py-4 px-4 mb-4 mt-8 flex flex-col w-full  gap-8 lg:w-7xl md:w-3xl sm:w-xl">
         <div className="bg-purple-950 rounded-2xl px-4">
           <h2 className="flex gap-2 text-2xl font-medium mt-8 text-purple-300"><BiMoviePlay size={36} className="" />Sinopse</h2>
           <span className="flex gap-2 text-2xl mb-8 mt-4 text-gray-300   -tracking-tighter ">{filme?.overview}</span>

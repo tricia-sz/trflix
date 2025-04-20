@@ -32,12 +32,12 @@ export default function Filmes() {
 
   return (
 
-    <Container className="mt-24">
-      <div className="mx-auto justify-center items-center flex mt-12">
-        <div className="grid grid-cols-4 gap-8 mx-auto justify-center items-center">
+    <Container>
+      <div className="mx-auto justify-center items-center flex">
+        <div className="grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:grid gap-8 mx-auto justify-center items-center">
           {filmes.map((filme) => {
             return (
-              <div key={filme.id} className=" justify-center items-center">
+              <div key={filme.id} className="justify-center items-center">
                 <Link href={`/filme/${filme.id}`}>
                   <Image
                     src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`}

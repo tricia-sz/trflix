@@ -33,16 +33,16 @@ export default function Favoritos() {
   }
 
   return (
-    <Container className="">
+    <Container>
       <div className="flex  justify-center items-center flex-col ">
         <h1 className="text-white text-5xl mb-8  font-bold flex gap-2"> Meus Favoritos</h1>
 
         {filmes.length === 0 && <span className="text-yellow-300 text-3xl  font-bold ">Você ainda não possui nenhum filme salvo =(</span>}
 
-        <ul className="items-center justify-center mx-auto gap-8 grid grid-cols-4">
+        <ul className="items-center justify-center mx-auto gap-8 grid-cols-2  lg:grid-cols-4 sm:grid">
           {filmes.map((item) => {
             return (
-              <li key={item.id} className="flex flex-col w-full justify-center items-center bg-purple-900/90 rounded-2xl">
+              <li key={item.id} className="flex flex-col w-full justify-center items-center bg-purple-900/90 rounded-2xl mb-8">
                 <div className="">
                   <Image
                     src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}

@@ -11,7 +11,7 @@ export default function Footer() {
     return (
        <>
             
-            <Image src={waveBottom} className="w-full rotate-180" alt="waveTop"/>
+          <Image src={waveBottom} className="w-full rotate-180" alt="waveTop"/>
             
          <footer className="bg-slate-950 justify-center items-center py-8 ">
          <div className='flex justify-center '>

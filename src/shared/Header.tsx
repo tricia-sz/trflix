@@ -34,7 +34,7 @@ export default function Header() {
               
             
               <div>
-                <nav className="justify-between items-center px-4 gap-8 mx-auto  rounded-4xl cursor-pointer flex  md:flex lg:flex py-8" >
+                <nav className="justify-between items-center gap-4 mx-auto  rounded-4xl cursor-pointer flex  md:flex lg:flex py-8" >
                     <Link href="/" className="flex gap-2 ">
                       <div className="flex gap-2">
                         <LuPopcorn size={24} className="text-purple-500" />
@@ -50,7 +50,7 @@ export default function Header() {
                       <FaStar size={24} className="text-purple-500" />
                       FAVORITOS
                     </Link>
-                    <Link href="" className="flex gap-2 ">
+                    <Link href="" className="hidden ms:block ">
                       <FaUserCircle size={36} className="text-purple-800" />
                       
                     </Link>

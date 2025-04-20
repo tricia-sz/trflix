@@ -35,7 +35,7 @@ export default function Favoritos() {
   return (
     <Container>
       <div className="flex  justify-center items-center flex-col ">
-        <h1 className="text-white text-5xl mb-8  font-bold flex gap-2"> Meus Favoritos</h1>
+        <h1 className="text-white text-3xl mb-8  font-bold flex gap-2 md:text-5xl lg:text-6xl"> Meus Favoritos</h1>
 
         {filmes.length === 0 && <span className="text-yellow-300 text-3xl  font-bold ">Você ainda não possui nenhum filme salvo =(</span>}
 

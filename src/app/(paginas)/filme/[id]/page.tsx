@@ -141,7 +141,7 @@ export default function Filme() {
           
         </Link>
         <Link href={`https://youtube.com/results?search_query=${filme?.title} Trailer`} target="blank" rel="external" >
-          <button className="flex bg-purple-200  gap-2 justify-center items-center rounded-4xl px-4  text-purple-950 mt-8 text-xl"><FcStart size={24} />Assistir Trailer</button>
+          <button className="flex bg-purple-200  gap-2 justify-center items-center rounded-4xl px-4 py-3  text-purple-950 mt-8 text-xl"><FcStart size={24} />Assistir Trailer</button>
         </Link>
       </div>
     </div>

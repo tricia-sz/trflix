@@ -37,7 +37,7 @@ export default function Filmes() {
         <div className="grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:grid gap-8 mx-auto justify-center items-center">
           {filmes.map((filme) => {
             return (
-              <div key={filme.id} className="justify-center items-center">
+              <div key={filme.id} className="justify-center items-center mb-8 mt-8">
                 <Link href={`/filme/${filme.id}`}>
                   <Image
                     src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`}
@@ -47,7 +47,7 @@ export default function Filmes() {
                     height={80}
                     unoptimized />
 
-                  <div className="flex mt-2 justify-center items-center gap-4">
+                  <div className="flex mt-2 justify-center items-center text-xl">
                     {filme.title}
                   </div>
                 </Link>
